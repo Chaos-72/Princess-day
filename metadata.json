@@ -1,0 +1,6 @@
+{
+  "name": "For My Princess — Happy Princess Day",
+  "description": "A personalized, romantic Princess Day scrapbook, photo gallery, and interactive love letter experience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-hand: "Caveat", cursive;
+
+  --color-ivory: #FCF8F4;
+  --color-cream: #F6EFE8;
+  --color-blush: #F8E8EC;
+  --color-dusty-rose: #B87288;
+  --color-lavender: #EFEAF6;
+  --color-rose-ink: #7F3952;
+  --color-rose-deep: #5F263B;
+  --color-rose-gold: #BA8763;
+  --color-champagne: #D8B998;
+  --color-plum-ink: #2F2226;
+  --color-plum-muted: #6C585F;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-ivory);
+    color: var(--color-plum-ink);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-serif);
+    text-wrap: balance;
+  }
+
+  .font-handwritten {
+    font-family: var(--font-hand);
+  }
+}
+
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.42;
+  }
+  85% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(22px) rotate(24deg);
+    opacity: 0;
+  }
+}
+
+@keyframes gentlePulseGlow {
+  0%, 100% {
+    opacity: 0.42;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.68;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes softTwinkle {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.85) rotate(0deg);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.15) rotate(12deg);
+  }
+}
+
+.animate-float-petal {
+  animation: floatSlow var(--float-duration, 18s) linear infinite;
+  animation-delay: var(--float-delay, 0s);
+}
+
+.animate-soft-glow {
+  animation: gentlePulseGlow 6s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: softTwinkle var(--twinkle-duration, 3.6s) ease-in-out infinite;
+  animation-delay: var(--twinkle-delay, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-float-petal,
+  .animate-soft-glow,
+  .animate-twinkle {
+    animation: none !important;
+  }
+}
